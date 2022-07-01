@@ -1,18 +1,22 @@
 <template>
   <div>
-    <router-view class="main" />
+    <!-- 缓存home页面的内容 -->
+    <keep-alive :include="['Home']">
+      <router-view class="main" />
+    </keep-alive>
+
     <van-tabbar route>
       <van-tabbar-item replace to="/home" icon="home-o">
         首页
         <i class="toutiao toutiao-shouye" slot="icon"></i>
       </van-tabbar-item>
-      <van-tabbar-item replace to="/search" icon="search"
+      <van-tabbar-item replace to="/video" icon="search"
         >视频 <i class="toutiao toutiao-shipin" slot="icon"></i
       ></van-tabbar-item>
-      <van-tabbar-item replace to="/search" icon="search"
+      <van-tabbar-item replace to="/question" icon="search"
         >问答 <i class="toutiao toutiao-wenda" slot="icon"></i
       ></van-tabbar-item>
-      <van-tabbar-item replace to="/search"
+      <van-tabbar-item replace to="/my"
         >我的 <i class="toutiao toutiao-wode" slot="icon"></i
       ></van-tabbar-item>
     </van-tabbar>
