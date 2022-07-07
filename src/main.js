@@ -11,11 +11,14 @@ import 'vant/lib/index.less'
 import '@/styles/index.less'
 import * as obj from '@/filters'
 
+import FollowUser from '@/components/FollowUser.vue'
+import '@/components/'
 Object.keys(obj).forEach(key => {
   Vue.filter(key, obj[key])
 })
 Vue.config.productionTip = false
 Vue.use(Vant)
+Vue.component(FollowUser.name, FollowUser) // 组件名字 ，组件实例对象
 new Vue({
   router,
   store,
